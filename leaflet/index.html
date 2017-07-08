@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>American Public Libraries</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="leaflet.css" integrity="sha512-wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js" integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA==" crossorigin=""></script>
+<script type="text/javascript" src="L.Terminator.js"></script>
+
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    height: 100%; width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+	
+</head>
+<body>
+
+
+
+<div id="mapid" class="bg"></div>
+<script>
+
+	var map = L.map('mapid'
+				//,{zoomSnap: 0.2}
+				).setView([39, -94], 5);
+
+
+	L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+	maxZoom: 18,
+	//attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+		id: 'mapbox.streets'
+	}).addTo(map);
+
+var booksIcon = L.Icon.extend({options:{iconUrl:'books2.png'}});
+var books25 = new booksIcon({iconSize:[162,267],iconAnchor:[81,213.6],popupAnchor:[0,0]}),
+    books19 = new booksIcon({iconSize:[141,232],iconAnchor:[70.5,185.6],popupAnchor:[0,0]}),
+    books9 = new booksIcon({iconSize:[97,160],iconAnchor:[48.5,128],popupAnchor:[0,0]}),
+    books8 = new booksIcon({iconSize:[91,151],iconAnchor:[45.5,120.8],popupAnchor:[0,0]}),
+    books7 = new booksIcon({iconSize:[86,141],iconAnchor:[43,112.8],popupAnchor:[0,0]}),
+    books6 = new booksIcon({iconSize:[79,131],iconAnchor:[39.5,104.8],popupAnchor:[0,0]}),
+    books5 = new booksIcon({iconSize:[72,119],iconAnchor:[36,95.2],popupAnchor:[0,0]}),
+    books4 = new booksIcon({iconSize:[65,107],iconAnchor:[32.5,85.6],popupAnchor:[0,0]}),
+    books3 = new booksIcon({iconSize:[56,92],iconAnchor:[28,73.6],popupAnchor:[0,0]}),
+    books2 = new booksIcon({iconSize:[46,75],iconAnchor:[23,60],popupAnchor:[0,0]}),
+    books1 = new booksIcon({iconSize:[32,53],iconAnchor:[16,42.4],popupAnchor:[0,0]});
+
+</script>
+<script src="points.js"></script>
+
+</body>
+</html>
